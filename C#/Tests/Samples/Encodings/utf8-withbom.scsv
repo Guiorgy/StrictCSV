@@ -1,0 +1,6 @@
+﻿"Value Type","Example"
+"Normal","something or another"
+"Contains Double Quotes","""The way to get started is to quit talking and begin doing"" -Walt Disney"
+"Multiline","first linesecond linethird line"
+"Empty String",""
+"Null",

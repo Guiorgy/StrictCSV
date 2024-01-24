@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;net6.0;net7.0;net8.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Authors>Guiorgy</Authors>
+    <Product>Strict CSV</Product>
+    <Description>A recration of the CSV specification under much stricter guidelines to simplify serialization and deserialization.</Description>
+    <Copyright>Guiorgy</Copyright>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Version>0.1.0.0</Version>
+    <PackageProjectUrl>https://github.com/Guiorgy/StrictCSV</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Guiorgy/StrictCSV</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Tests\**" />
+    <EmbeddedResource Remove="Tests\**" />
+    <None Remove="Tests\**" />
+  </ItemGroup>
+
+</Project>
