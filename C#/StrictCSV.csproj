@@ -3,22 +3,39 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;net6.0;net7.0;net8.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
-    <Authors>Guiorgy</Authors>
+    <Nullable>enable</Nullable>
     <Product>Strict CSV</Product>
+    <Title>Strict CSV</Title>
     <Description>A recration of the CSV specification under much stricter guidelines to simplify serialization and deserialization.</Description>
-    <Copyright>Guiorgy</Copyright>
-    <NeutralLanguage>en</NeutralLanguage>
     <Version>0.1.0.0</Version>
+    <Authors>Guiorgy</Authors>
+    <Copyright>Copyright (c) 2024 Guiorgy</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Guiorgy/StrictCSV</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Guiorgy/StrictCSV</RepositoryUrl>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Nullable>enable</Nullable>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Tests\**" />
     <EmbeddedResource Remove="Tests\**" />
     <None Remove="Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
