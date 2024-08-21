@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="StrictCSV.csproj" />
+  <Project Path="Tests/Tests.csproj" />
+</Solution>
