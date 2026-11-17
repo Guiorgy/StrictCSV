@@ -7,11 +7,11 @@ public sealed class TestsEncodings
 {
     private static void AssertDeserialized(string?[] header, string?[,] values)
     {
-        Assert.AreEqual(2, header.Length);
+        Assert.HasCount(2, header);
         Assert.AreEqual("Value Type", header[0]);
         Assert.AreEqual("Example", header[1]);
 
-        Assert.AreEqual(5 * 2, values.Length);
+        Assert.HasCount(5 * 2, values);
         Assert.AreEqual(5, values.GetLength(0));
         Assert.AreEqual(2, values.GetLength(1));
         Assert.AreEqual("Normal", values[0, 0]);
@@ -23,7 +23,7 @@ public sealed class TestsEncodings
         Assert.AreEqual("Empty String", values[3, 0]);
         Assert.AreEqual("", values[3, 1]);
         Assert.AreEqual("Null", values[4, 0]);
-        Assert.AreEqual(null, values[4, 1]);
+        Assert.IsNull( values[4, 1]);
     }
 
     private static void TestsFile(string path, ScsvEncoding encoding)
@@ -33,7 +33,7 @@ public sealed class TestsEncodings
 
         var expected = File.ReadAllBytes(path);
         var actual = StrictCsvSimple.Serialize(header, values, encoding);
-        CollectionAssert.AreEqual(expected, actual);
+        Assert.AreSequenceEqual(expected, actual);
     }
 
     [TestMethod]
