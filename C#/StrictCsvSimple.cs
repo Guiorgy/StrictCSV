@@ -54,9 +54,9 @@ public static class StrictCsvSimple
 
         var splits = row.Split(','); // values are separated by a comma
 
-        List<string?> values = new(splits.Length);
+        List<string?> values = [with(splits.Length)];
 
-        List<string?> merged = new(splits.Length);
+        List<string?> merged = [with(splits.Length)];
         foreach (var potentialValue in splits)
         {
             if (merged.Count == 0)
@@ -91,7 +91,7 @@ public static class StrictCsvSimple
 
         if (values.Count == 0) throw new StrictCsvException("Only compact format is supported.");
 
-        return values.Select(Unescape).ToArray();
+        return [.. values.Select(Unescape)];
     }
 
     /// <summary>
